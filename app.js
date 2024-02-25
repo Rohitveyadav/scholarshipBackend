@@ -6,8 +6,8 @@ app.get('/courses', async (req, res) => {
     try {
 
 
-        let sql = `
-    SELECT DISTINCT c.*
+    let sql = `
+    SELECT DISTINCT c.course_name,c.course_duration,c.course_tuition,u.university_name,el.level_name
     FROM Course c
     INNER JOIN University u ON c.university_id = u.university_id
     INNER JOIN EducationLevel el ON c.level_id = el.level_id
